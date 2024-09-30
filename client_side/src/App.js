@@ -16,6 +16,10 @@ import { NotificationsProvider } from './pages/NotificationsContext';
 import TeacherDashboard from './pages/TeacherDashboard'; // Import Teacher Dashboard
 import Attendance from './pages/Attendance'; // Import Attendance
 import ResourceManagement from './pages/ResourceManagement'; // Import the new page
+import CreateAlert from './pages/CreateAlert';
+import SafetyProtocols from './pages/SafetyProtocols';
+import ReportIncident from './pages/ReportIncident';
+import IncidentManagement from './pages/IncidentManagement';
 
 function App() {
   // Initialize authentication state
@@ -139,6 +143,32 @@ function App() {
                     ) : (
                       <Navigate to="/login" />
                     )
+                  }
+                />
+                {/* Alert page  */}
+                <Route
+                  path="/dashboard/create-alert"
+                  element={
+                    isAuthenticated && (role === 'admin' || role === 'teacher') ? (
+                      <CreateAlert />
+                    ) : (
+                      <Navigate to="/login" />
+                    )
+                  }
+                />
+                {/* Safety protocols  */}
+                <Route
+                  path="/dashboard/safety-protocols"
+                  element={isAuthenticated ? <SafetyProtocols /> : <Navigate to="/login" />}
+                />
+                <Route
+                  path="/dashboard/report-incident"
+                  element={isAuthenticated ? <ReportIncident /> : <Navigate to="/login" />}
+                />
+                <Route
+                  path="/dashboard/incident-management"
+                  element={
+                    isAuthenticated && role === 'admin' ? <IncidentManagement /> : <Navigate to="/login" />
                   }
                 />
                 {/* Other Routes */}

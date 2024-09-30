@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Home, Users, Briefcase, Calendar, Package, CheckSquare } from 'lucide-react';
+import { Home, Users, Briefcase, Calendar,Package, AlertTriangle, Shield , FilePlus, FileText, CheckSquare } from 'lucide-react';
 import { useLocation, Link } from 'react-router-dom';
 import '@fontsource/montserrat';
 
@@ -16,12 +16,19 @@ const Sidebar = () => {
   const adminMenu = [
     { name: 'Dashboard', icon: Home, path: '/dashboard' },
     { name: 'Schedule', icon: Calendar, path: '/dashboard/schedule' },
+    { name: 'Create Alert', icon: AlertTriangle, path: '/dashboard/create-alert' },
+    { name: 'Safety Protocols', icon: Shield, path: '/dashboard/safety-protocols' },
+    { name: 'Report Incident', icon: FilePlus, path: '/dashboard/report-incident' },
+    { name: 'Incident Management', icon: FileText, path: '/dashboard/incident-management' },
   ];
 
   const teacherMenu = [
     { name: 'Dashboard', icon: Home, path: '/dashboard/teacher' },
     { name: 'Attendance', icon: CheckSquare, path: '/dashboard/attendance' },
     { name: 'Resources', icon: Package, path: '/dashboard/resources' },
+    { name: 'Create Alert', icon: AlertTriangle, path: '/dashboard/create-alert' },
+    { name: 'Safety Protocols', icon: Shield, path: '/dashboard/safety-protocols' },
+    { name: 'Report Incident', icon: FilePlus, path: '/dashboard/report-incident' },
     // Add more teacher-specific menu items here
   ];
 
@@ -30,6 +37,8 @@ const Sidebar = () => {
     { name: 'Profile', icon: Users, path: '/profile' },
     { name: 'Query', icon: Calendar, path: '/dashboard/query' },
     { name: 'Companies', icon: Briefcase, path: '/dashboard/companies' },
+    { name: 'Safety Protocols', icon: Shield, path: '/dashboard/safety-protocols' },
+    { name: 'Report Incident', icon: FilePlus, path: '/dashboard/report-incident' },
   ];
 
   const MenuList =
