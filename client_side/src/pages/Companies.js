@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 const Companies = () => {
-  const [companyData, setCompanyData] = useState([]); // State to store the company data from the API
+  const [companyData, setCompanyData] = useState([]); // State to store the company data from the API   "http://localhost:3000
 
   useEffect(() => {
     const fetchCompanyData = async () => {
       try {
         const token = localStorage.getItem('token'); // Retrieve the token
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/company/list`, {
+        const response = await fetch("http://localhost:3000/api/v1/company/list", {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

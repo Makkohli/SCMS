@@ -19,7 +19,7 @@ const Login = ({ onLogin }) => { // Accept onLogin as a prop
     setError('');
     try {
       // Send the login data in the specified format
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/auth/login`, {
+      const response = await fetch("http://localhost:3000/api/v1/auth/login", {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -114,6 +114,7 @@ const Login = ({ onLogin }) => { // Accept onLogin as a prop
             >
               <option value='student'>Student</option>
               <option value='admin'>Admin</option>
+              <option value='teacher'>teacher</option>
             </select>
           </div>
 

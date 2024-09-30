@@ -100,7 +100,7 @@ const Profile = () => {
   
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/uploadcv/add-resume`, {
+        const response = await fetch(`http://localhost:3000/api/v1/uploadcv/add-resume`, {
           method: 'POST',
           body: JSON.stringify({ resume: `data:application/pdf;base64,${base64String}`}),
           headers: {
@@ -133,7 +133,7 @@ const Profile = () => {
   const handleRemoveResume = async () => {
     try {
       const token = localStorage.getItem('token');
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/removecv/remove-resume`, {
+      const response = await fetch(`http://localhost:3000/api/v1/removecv/remove-resume`, {
         method: 'DELETE',
         headers: {
           'Authorization': `${token}`,
