@@ -2,9 +2,6 @@
 import React from 'react';
 
 const ResourceList = ({ resources, onSelectResource, selectedResource }) => {
-  console.log('resources:', resources);
-  console.log('typeof resources:', typeof resources);
-  console.log('Array.isArray(resources):', Array.isArray(resources));
   return (
     <div className="bg-white p-6 rounded-lg shadow-md text-gray-800">
       <h2 className="text-xl font-bold mb-4">Available Resources</h2>

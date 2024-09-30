@@ -1,5 +1,5 @@
 // src/components/ResourceBooking.js
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 
@@ -7,12 +7,15 @@ const ResourceBooking = ({ resource, schedules }) => {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [timeSlot, setTimeSlot] = useState('');
   const [bookedBy, setBookedBy] = useState('');
-  const [bookings, setBookings] = useState(() => {
+  const [bookings, setBookings] = useState([]);
+
+  // Update bookings when the selected resource changes
+  useEffect(() => {
     const resourceSchedule = schedules.find(
       (schedule) => schedule.resourceId === resource.id
     );
-    return resourceSchedule ? resourceSchedule.bookings : [];
-  });
+    setBookings(resourceSchedule ? resourceSchedule.bookings : []);
+  }, [resource, schedules]);
 
   const handleBooking = () => {
     if (timeSlot && bookedBy) {
@@ -21,7 +24,7 @@ const ResourceBooking = ({ resource, schedules }) => {
         time: timeSlot,
         bookedBy,
       };
-      setBookings([...bookings, newBooking]);
+      setBookings((prevBookings) => [...prevBookings, newBooking]);
       // Reset fields
       setTimeSlot('');
       setBookedBy('');
@@ -33,9 +36,10 @@ const ResourceBooking = ({ resource, schedules }) => {
       <h2 className="text-xl font-bold mb-4">Manage Bookings for {resource.name}</h2>
       <div className="mb-4">
         <label className="block mb-2">Select Date:</label>
-        <DatePicker
-          selected={selectedDate}
-          onChange={(date) => setSelectedDate(date)}
+        <input
+          type="date"
+          value={selectedDate.toISOString().split('T')[0]}
+          onChange={(e) => setSelectedDate(new Date(e.target.value))}
           className="p-2 border rounded"
         />
       </div>
