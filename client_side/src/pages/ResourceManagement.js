@@ -8,6 +8,7 @@ import ResourceBooking from '../components/ResourceBooking';
 const ResourceManagement = () => {
   const [selectedResource, setSelectedResource] = useState(null);
 
+  // Console logs for debugging (you can remove these in production)
   console.log('resourcesData:', resourcesData);
   console.log('typeof resourcesData:', typeof resourcesData);
   console.log('Array.isArray(resourcesData):', Array.isArray(resourcesData));
