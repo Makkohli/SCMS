@@ -46,8 +46,11 @@ const Login = ({ onLogin }) => { // Accept onLogin as a prop
         // Redirect based on the role received from API
         if (role === 'admin') {
           navigate('/dashboard'); // Redirect to Admin Dashboard
-        } else {
+        } else if(role === 'student'){
           navigate('/dashboard/students'); // Redirect to Student Dashboard
+        }
+        else{
+          navigate('/dashboard/teacher'); // Redirect to Student Dashboard
         }
       } else {
         const errorData = await response.json();

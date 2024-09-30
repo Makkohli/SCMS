@@ -1,0 +1,8 @@
+[
+    { "id": 1, "name": "Alice Johnson", "isPresent": true },
+    { "id": 2, "name": "Bob Smith", "isPresent": false },
+    { "id": 3, "name": "Charlie Brown", "isPresent": true },
+    { "id": 4, "name": "Diana Prince", "isPresent": false },
+    { "id": 5, "name": "Ethan Hunt", "isPresent": true }
+  ]
+  

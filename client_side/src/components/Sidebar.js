@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Home, Users, Briefcase, Calendar } from 'lucide-react';
+import { Home, Users, Briefcase, Calendar,Package, CheckSquare } from 'lucide-react';
 import { useLocation, Link } from 'react-router-dom';
 import '@fontsource/montserrat';
 
@@ -14,10 +14,15 @@ const Sidebar = () => {
   }, []);
 
   const adminMenu = [
-
     { name: 'Dashboard', icon: Home, path: '/dashboard' },
     { name: 'Schedule', icon: Calendar, path: '/dashboard/schedule' },
-    
+  ];
+
+  const teacherMenu = [
+    { name: 'Dashboard', icon: Home, path: '/dashboard/teacher' },
+    { name: 'Attendance', icon: CheckSquare, path: '/dashboard/attendance' },
+    { name: 'Resources', icon: Package, path: '/dashboard/resources' },
+    // Add more teacher-specific menu items here
   ];
 
   const studentMenu = [
@@ -27,8 +32,10 @@ const Sidebar = () => {
     { name: 'Companies', icon: Briefcase, path: '/dashboard/companies' },
   ];
 
-  const MenuList = role === 'admin' ? adminMenu : studentMenu;
-
+  const MenuList =
+    role === 'admin' ? adminMenu :
+    role === 'teacher' ? teacherMenu :
+    studentMenu;
 
   return (
     <div className="fixed top-0 left-0 h-screen w-80 p-5 bg-[#373737] font-montserrat text-white">
