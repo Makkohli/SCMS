@@ -14,7 +14,7 @@ export const NotificationsProvider = ({ children }) => {
     const fetchNotifications = async () => {
       try {
         const token = localStorage.getItem('token');
-        const response = await fetch(`${process.env.REACT_APP_API_URL}/api/v1/notices/list`, {
+        const response = await fetch("http://localhost:3000/api/v1/notices/list", {
           method: 'GET',
           headers: {
             'Content-Type': 'application/json',

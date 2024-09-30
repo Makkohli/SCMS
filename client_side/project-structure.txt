@@ -1,0 +1,57 @@
+project-root/
+├── public/
+│   ├── logos/
+│   │   ├── autodrive-logo.svg
+│   │   ├── biohealth-logo.svg
+│   │   ├── cybersecure-logo.svg
+│   │   ├── data-solutions-logo.svg
+│   │   ├── default-company-logo.svg
+│   │   ├── designhub-logo.svg
+│   │   ├── edulearn-logo.svg
+│   │   ├── fintrust-logo.svg
+│   │   ├── greenenergy-logo.svg
+│   │   ├── healthplus-logo.svg
+│   │   ├── innovatex-logo.svg
+│   │   ├── quantumleap-logo.svg
+│   │   └── tech-corp-logo.svg
+│   ├── favicon.ico
+│   ├── index.html
+│   ├── logo192.png
+│   ├── logo512.png
+│   ├── manifest.json
+│   └── robots.txt
+├── src/
+│   ├── auth/
+│   │   ├── login.js
+│   │   └── signup.js
+│   ├── components/
+│   │   ├── DashboardCards.js
+│   │   ├── Header.js
+│   │   └── Sidebar.js
+│   ├── data/
+│   │   └── companies.json
+│   ├── pages/
+│   │   ├── Companies.js
+│   │   ├── CompanyDetails.js
+│   │   ├── Dashboard.js
+│   │   ├── EditProfile.js
+│   │   ├── NotificationsContext.js
+│   │   ├── Profile.js
+│   │   ├── Query.js
+│   │   ├── Schedule.js
+│   │   └── Students.js
+│   ├── App.js
+│   ├── App.test.js
+│   ├── index.css
+│   ├── index.js
+│   ├── logo.svg
+│   ├── reportWebVitals.js
+│   └── setupTests.js
+├── .env
+├── .gitignore
+├── App.css
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── project-structure.txt
+└── tailwind.config.js
