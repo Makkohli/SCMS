@@ -1,4 +1,3 @@
-// src/components/Header.js
 import React, { useState, useRef, useEffect, useContext } from 'react';
 import { Search, Bell } from 'lucide-react';
 import { FaExclamationCircle } from 'react-icons/fa'; // Using react-icons for additional icons
@@ -38,16 +37,16 @@ function Header({ onLogout }) {
   }, []);
 
   return (
-    <div className='p-5 flex justify-between items-center bg-gray-800'>
+    <div className='p-5 flex justify-between items-center bg-[#E5E7EB]'>
       {/* Left Section: Search Bar and Notifications */}
       <div className='flex items-center gap-4 flex-grow'>
         {/* Search Bar */}
-        <div className='flex gap-3 items-center p-3 rounded-md max-w-6xl w-full bg-[#373737] shadow-md'>
-          <Search className='text-white text-xl' />
+        <div className='flex gap-3 items-center p-3 rounded-md max-w-6xl w-full bg-[#D1D5DB] shadow-md'>
+          <Search className='text-[#111827] text-xl' />
           <input 
             type='text' 
             placeholder='Search...'
-            className='bg-transparent w-full outline-none text-white placeholder-white text-lg'
+            className='bg-transparent w-full outline-none text-[#111827] placeholder-gray-400 text-lg'
             style={{ border: 'none' }}
             aria-label='Search'
           />
@@ -56,7 +55,7 @@ function Header({ onLogout }) {
         {/* Notifications Bell Icon */}
         <div className='relative'>
           <Bell 
-            className='text-white text-2xl cursor-pointer' 
+            className='text-[#111827] text-2xl cursor-pointer' 
             onClick={toggleNotifications}
             aria-label='Notifications' // ARIA label for accessibility
           />
@@ -71,19 +70,19 @@ function Header({ onLogout }) {
           {isNotificationsOpen && (
             <div 
               ref={dropdownRef}
-              className='absolute right-0 mt-2 w-80 bg-gray-700 text-white rounded-lg shadow-lg z-50'
+              className='absolute right-0 mt-2 w-80 bg-[#D1D5DB] text-[#111827] rounded-lg shadow-lg z-50'
               role='menu'
               aria-label='Notifications Menu'
             >
               {/* Dropdown Header */}
-              <div className='p-4 border-b border-gray-600 flex justify-between items-center'>
+              <div className='p-4 border-b border-[#B3B3B3] flex justify-between items-center'>
                 <h3 className='text-lg font-semibold flex items-center'>
                   <FaExclamationCircle className='mr-2' />
                   Notifications
                 </h3>
                 <button 
                   onClick={() => setIsNotificationsOpen(false)}
-                  className='text-gray-400 hover:text-white focus:outline-none'
+                  className='text-gray-600 hover:text-[#111827] focus:outline-none'
                   aria-label='Close Notifications'
                 >
                   &times;
@@ -100,7 +99,7 @@ function Header({ onLogout }) {
                   notifications.map((notification) => (
                     <li 
                       key={notification.id} 
-                      className='p-4 hover:bg-gray-600 cursor-pointer transition-colors duration-200'
+                      className='p-4 hover:bg-[#B0BEC5] cursor-pointer transition-colors duration-200'
                       role='menuitem'
                     >
                       <h4 className='font-semibold'>{notification.title}</h4>
@@ -114,16 +113,6 @@ function Header({ onLogout }) {
                   <li className='p-4 text-gray-400'>No notifications available.</li>
                 )}
               </ul>
-
-              {/* Dropdown Footer
-              <div className='p-4 border-t border-gray-600 text-center'>
-                <button 
-                  onClick={() => setIsNotificationsOpen(false)}
-                  className='text-blue-400 hover:underline focus:outline-none'
-                >
-                  View All
-                </button>
-              </div> */}
             </div>
           )}
         </div>
