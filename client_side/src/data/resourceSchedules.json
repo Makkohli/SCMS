@@ -1,0 +1,16 @@
+[
+    {
+      "resourceId": 2,
+      "bookings": [
+        { "date": "2023-10-01", "time": "09:00 AM - 11:00 AM", "bookedBy": "Mr. Smith" },
+        { "date": "2023-10-02", "time": "01:00 PM - 03:00 PM", "bookedBy": "Ms. Johnson" }
+      ]
+    },
+    {
+      "resourceId": 3,
+      "bookings": [
+        { "date": "2023-10-01", "time": "10:00 AM - 12:00 PM", "bookedBy": "Mr. Lee" }
+      ]
+    }
+  ]
+  
