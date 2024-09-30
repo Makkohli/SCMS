@@ -157,8 +157,8 @@ const Profile = () => {
   };
 
   return (
-    <div className='p-6 bg-[#222222] flex-1 overflow-auto'>
-      <div className='max-w-4xl mx-auto bg-[#373737] p-6 rounded-lg shadow-md text-white'>
+    <div className='p-6 bg-[#111827] flex-1 overflow-auto'>
+      <div className='max-w-4xl mx-auto bg-[#1F2937] p-6 rounded-lg shadow-md text-white'>
         <h1 className='text-2xl font-bold mb-4'>Profile</h1>
         <div className='mb-4'>
           <p><strong>Name:</strong> {profile.name || 'N/A'}</p>

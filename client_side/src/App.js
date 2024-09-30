@@ -1,4 +1,3 @@
-// src/App.js
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
@@ -17,7 +16,6 @@ import { NotificationsProvider } from './pages/NotificationsContext';
 import TeacherDashboard from './pages/TeacherDashboard'; // Import Teacher Dashboard
 import Attendance from './pages/Attendance'; // Import Attendance
 import ResourceManagement from './pages/ResourceManagement'; // Import the new page
-
 
 function App() {
   // Initialize authentication state
@@ -75,13 +73,13 @@ function App() {
   return (
     <NotificationsProvider>
       <Router>
-        <div className="min-h-screen flex bg-[#222222]">
+        <div className="min-h-screen flex bg-[#111827] text-white">
           {isAuthenticated && <Sidebar />}
 
-          <div className={`flex-1 flex flex-col ${isAuthenticated ? 'ml-80' : ''}`}>
+          <div className={`flex-1 flex flex-col ${isAuthenticated ? 'ml-80' : ''} bg-[#1F2937]`}>
             {isAuthenticated && <Header onLogout={handleLogout} />}
 
-            <main className="p-6 flex-1 overflow-auto">
+            <main className="p-6 flex-1 overflow-auto bg-[#374151]">
               <Routes>
                 {/* Public Routes */}
                 <Route path="/signup" element={<Signup />} />
