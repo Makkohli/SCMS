@@ -1,6 +1,6 @@
 import Student from './student.js';
 import Admin from './admin.js';
 import Notice from './Notice.js';
-import Company from './company.js';
+import Teacher from './teacher.js';
 
-export { Student, Admin, Notice, Company };
+export { Student, Admin, Notice, Teacher };

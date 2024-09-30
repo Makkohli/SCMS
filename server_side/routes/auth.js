@@ -2,17 +2,14 @@ import express from 'express';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 import { signupSchema, loginSchema } from '../zodSchema/index.js';
-import { Student, Admin } from '../models/index.js';
+import { Student, Admin, Teacher } from '../models/index.js'; // Include Teacher model
 import dotenv from 'dotenv';
 dotenv.config();
-
 
 const router = express.Router();
 const JWT_SECRET = process.env.JWT_SECRET;
 
-
-
-// Signup as Student or Admin
+// Signup as Student, Admin, or Teacher
 router.post("/signup", async (req, res) => {
   try {
     const validatedData = signupSchema.parse(req.body);
@@ -20,6 +17,8 @@ router.post("/signup", async (req, res) => {
 
     const userExists = role === 'student' 
       ? await Student.findOne({ email }) 
+      : role === 'teacher'
+      ? await Teacher.findOne({ email }) // Check if the user is a teacher
       : await Admin.findOne({ email });
 
     if (userExists) {
@@ -29,6 +28,8 @@ router.post("/signup", async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
     const newUser = role === 'student'
       ? new Student({ name, email, password: hashedPassword })
+      : role === 'teacher'
+      ? new Teacher({ name, email, password: hashedPassword }) // Create a new teacher
       : new Admin({ name, email, password: hashedPassword });
 
     await newUser.save();
@@ -38,7 +39,7 @@ router.post("/signup", async (req, res) => {
   }
 });
 
-// Login as Student or Admin
+// Login as Student, Admin, or Teacher
 router.post("/login", async (req, res) => {
   try {
     const validatedData = loginSchema.parse(req.body);
@@ -46,6 +47,8 @@ router.post("/login", async (req, res) => {
 
     const user = role === 'student'
       ? await Student.findOne({ email })
+      : role === 'teacher'
+      ? await Teacher.findOne({ email }) // Fetch user as teacher
       : await Admin.findOne({ email });
 
     if (!user) return res.status(400).json({ message: `${role.charAt(0).toUpperCase() + role.slice(1)} not found` });
@@ -58,9 +61,9 @@ router.post("/login", async (req, res) => {
       message: `${role.charAt(0).toUpperCase() + role.slice(1)} logged in successfully`,
       token,
       role, // Include the role in the response
-     _id: user._id,
-  });
-  
+      _id: user._id,
+    });
+    
   } catch (error) {
     console.error("Validation error details:", error.errors);
     res.status(400).json({ message: "Validation Error", error: error.errors });

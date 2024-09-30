@@ -114,6 +114,7 @@ const Login = ({ onLogin }) => { // Accept onLogin as a prop
             >
               <option value='student'>Student</option>
               <option value='admin'>Admin</option>
+              <option value='teacher'>teacher</option>
             </select>
           </div>
 
