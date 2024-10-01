@@ -1,121 +1,92 @@
----
+# Welcome to EduTech - Smart Classroom Management Software 👋
 
-# TNP Portal
+Welcome to **EduTech**, the future of smart classroom management.  
+Brought to you by Team **Neon Nexus**, our mission is to revolutionize how classrooms operate and enhance the learning experience using advanced technology.
 
-## Overview
+This project aims to transform traditional classroom operations through automation, data analytics, and AI-powered solutions, providing a modern and efficient learning environment.
 
-The TNP Portal is a web application designed to manage and display information related to students, companies, schedules, and more. The application features a responsive layout with a sidebar and header, allowing users to navigate through different components and pages seamlessly. 
+## Proposed Solution
 
-https://drive.google.com/drive/folders/1iCwGBl8G5Wdto4ylYmUnbKcKJszSdusr?usp=sharing
+**EduTech** is a comprehensive solution designed to streamline classroom operations, optimize resource utilization, and create a secure and engaging learning environment. It integrates facial recognition, AI-based chatbots, and real-time data analytics to automate key aspects of classroom management, making it more efficient and effective.
 
-## Tech Stack
+### Core Features
+- **Attendance Automation**: Uses facial recognition and mobile app-based check-ins to automatically record student attendance, generating real-time reports for teachers and administration.
+- **Resource Management**: Tracks the usage of classroom resources such as projectors and computers, with a centralized platform to automate scheduling and maintenance.
+- **Safety and Security Alerts**: Provides real-time alerts for emergencies, such as fire or unauthorized access, integrated with existing security systems.
+- **Interactive Learning Tools**: Seamless integration with smart boards and interactive displays to adapt to teaching content, offering real-time analytics on student engagement.
+- **Data Analytics**: Collects and analyzes classroom data to provide insights into student behavior, attendance patterns, and resource utilization.
+- **AI-based Chatbot**: Offers personalized assistance to students, helping them understand their learning gaps.
 
-- **Frontend**: 
-  - React: A JavaScript library for building user interfaces.
-  - React Router DOM: For routing and navigation.
-  - Tailwind CSS: For styling and responsive design.
-  - Lucide Icons: For icons used in the sidebar.
-  
-- **Backend**: 
-  - No backend integration currently; data is managed and displayed using local JSON files and React state.
+### Technical Stack
+- **Frontend**: React.js, Tailwind CSS
+- **Backend**: Node.js, Express.js
+- **Database**: MongoDB
+- **AI/ML Libraries**: TensorFlow, OpenCV, Dialogflow
+- **Cloud Services**: AWS/GCP for hosting and deployment
+- **DevOps**: Docker for containerization
+- **Security**: OAuth 2.0, JWT for secure authentication
 
-## Project Structure
+### Key Technologies
+- **AI Chatbot**: Provides personalized learning insights and assists students.
+- **Data Security**: Implements encryption, multi-factor authentication, and future blockchain integration.
+- **Interoperability**: Ensures smooth data integration with standardized protocols.
 
-- `src/`
-  - `components/`: Contains reusable components such as Sidebar, Header, etc.
-  - `data/`: Contains JSON files with data for companies, schedules, and more.
-  - `pages/`: Contains the main pages of the application, such as Dashboard, Students, Companies, etc.
-  - `App.js`: Main application file where routes are defined.
-  - `index.css` and `App.css`: For styling.
-  
-## Features
+## Feasibility and Impact
 
-1. **Sidebar**: 
-   - Includes navigation links to Dashboard, Students, Companies, Schedule, Profile, and Query pages.
-   - Styled with custom colors and fonts.
-   - Collapses on smaller screens for better responsiveness.
+### Feasibility
+- **Technical**: Scalable with modern web and cloud technologies.
+- **Operational**: Streamlined management for administrators, teachers, and students.
+- **Financial**: Cost-effective development with potential for large-scale adoption.
 
-2. **Dashboard**:
-   - Displays an overview of the portal with cards for Total Students, Placed Students, and Time Left.
-   - Customizable with real-time data.
+### Potential Impact
+- **Teachers**: Reduces administrative workload and enhances teaching effectiveness.
+- **Students**: Offers personalized and engaging learning experiences.
+- **Administrators**: Improves operational efficiency and safety.
+- **Overall Education System**: Promotes a more data-driven and interactive learning environment.
 
-3. **Students Page**:
-   - Shows a list of students with their status.
-   - Allows viewing and updating student details.
-   - Features a card for Rejected Students and a table of companies.
+## Team Details
 
-4. **Companies Page**:
-   - Lists companies with detailed information.
-   - Includes a Company Details page with apply links.
+**Team Name:** Neon Nexus
 
-5. **Schedule Page**:
-   - Allows adding and viewing events.
-   - Events are updated in real time and displayed on the Companies page.
+**Team Leader:** [@interrupt404](https://github.com/interrupt404)
 
-6. **Profile Page**:
-   - Displays user profile information including name, email, phone, department, CGPA, batch, and resume.
-   - Resume can be viewed or downloaded.
+**Team Members:**
 
-7. **Edit Profile Page**:
-   - Allows users to edit their profile information.
-   - Supports uploading a new resume and updating existing details.
+- *Paras Jain* - 2021UCI8027 - [@SeineAle](https://github.com/SeineAle)
+- *Chandan* - 2021UCI8002 - [@alpha2lucifer](https://github.com/alpha2lucifer)
+- *Manish Kumar Kohli* - 2021UCI8025 - [@Makkohli](https://github.com/Makkohli)
+- *Rajat Raj* - 2021UCI8055 - [@interrupt404](https://github.com/interrupt404)
+- *Utkarsh Anand* - 2021UCI8001 - [@utkarshanand07](https://github.com/utkarshanand07)
+- *Arpita Sinha* - 2023UEA7645 - [@arpita-sinhaa](https://github.com/arpita-sinhaa)
 
-8. **Query Page**:
-   - Allows users to write a query and contact the POC (Point of Contact).
-   - Features a form for submitting queries.
+## Project Links
 
-## How to Run the Project
+- **Final SIH Presentation:** [Final SIH Presentation](https://drive.google.com/file/d/1N0Nbgi8v7gmU7YkH4CYqS1pAZMGloXfm/view?usp=drive_link)
+- **Video Demonstration:** [Watch Video](https://youtu.be/LTtUqibyvB0)
 
-1. **Clone the Repository**:
-   ```bash
-   git clone https://github.com/Makkohli/TNP_portal.git
-   cd TNP_portal
-   ```
+## Get Started
 
-2. **Install Dependencies**:
-   ```bash
-   npm install
-   ```
+1. Clone the repository:
 
-3. **Start the Development Server**:
-   ```bash
-   npm start
-   ```
+ ```bash
+ git clone https://github.com/YourUsername/EduTech-SCMS.git
+ cd SCMS
+ ```
 
-4. **Access the Application**:
-   Open your browser and go to `http://localhost:3000` to view the application.
+2. Start the backend server:
 
-## Development
+  ```bash
+  cd server_side
+  node index.js
+  ```
+3. Start the frontend server:
 
-- **Adding New Features**: Update the corresponding page/component files in the `src/pages/` or `src/components/` directory.
-- **Styling**: Use Tailwind CSS classes for styling or update `index.css`/`App.css` for global styles.
+  ```bash
+  cd client_side
+  npm start
+  ```
 
-## Contributing
+The frontend will run on http://localhost:3000 and the backend on http://localhost:5000.
 
-1. **Fork the Repository** and clone it to your local machine.
-2. **Create a New Branch** for your feature or fix:
-   ```bash
-   git checkout -b feature/your-feature
-   ```
-3. **Make Your Changes** and commit them:
-   ```bash
-   git add .
-   git commit -m "Add your feature or fix"
-   ```
-4. **Push to Your Fork**:
-   ```bash
-   git push origin feature/your-feature
-   ```
-5. **Create a Pull Request** to merge your changes into the main repository.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## Acknowledgments
-
-- Tailwind CSS for the utility-first styling framework.
-- React and React Router for building the UI and handling navigation.
-- Lucide Icons for a consistent and modern icon set.
-
----
+## Licence
+This project is licensed under the MIT License - see the LICENSE file for details.
